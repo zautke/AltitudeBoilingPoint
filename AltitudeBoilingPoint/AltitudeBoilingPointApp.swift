@@ -1,32 +1,29 @@
 //
-//  AltitudeBoilingPointApp.swift
-//  AltitudeBoilingPoint
+//  BoilingPointAltitudeApp.swift
+//  Boiling Point at Altitude
 //
-//  Created by lucious lucius on 12/12/25.
+//  App entry point with splash screen
 //
 
 import SwiftUI
-import SwiftData
 
 @main
-struct AltitudeBoilingPointApp: App {
-//    var sharedModelContainer: ModelContainer = {
-//        let schema = Schema([
-//            Item.self,
-//        ])
-//        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-//
-//        do {
-//            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-//        } catch {
-//            fatalError("Could not create ModelContainer: \(error)")
-//        }
-//    }()
-
+struct BoilingPointAltitudeApp: App {
+    @State private var showSplash = true
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                if showSplash {
+                    SplashScreenView {
+                        showSplash = false
+                    }
+                    .transition(.opacity)
+                } else {
+                    ContentView()
+                        .transition(.opacity)
+                }
+            }
         }
-        //.modelContainer(sharedModelContainer)
     }
 }
