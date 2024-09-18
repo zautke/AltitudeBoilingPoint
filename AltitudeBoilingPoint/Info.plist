@@ -2,9 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your location to determine your current altitude for accurate boiling point calculations.</string>
+	<key>NSMotionUsageDescription</key>
+	<string>We use the barometric pressure sensor to measure altitude and calculate water&apos;s boiling point at your location.</string>
 </dict>
 </plist>
